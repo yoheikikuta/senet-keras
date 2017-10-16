@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+data/*
+trained_model/*
+logs/*
+!.gitkeep
+__pycache__

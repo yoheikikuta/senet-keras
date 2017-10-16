@@ -1,0 +1,5 @@
+*/.git*
+*/.ipynb_checkpoints*
+*/data*
+*/logs*
+*/trained_model*
