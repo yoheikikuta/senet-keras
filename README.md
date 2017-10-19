@@ -33,3 +33,10 @@ Naive implementation of SENet models in Keras.
   (in the container) $ bash launch_notebook.sh
   ```
 - Execute `evaluate-cifar10.ipynb` notebook.
+
+## Results
+- Plots of training loss and accuracy. <br>
+  ![result](https://github.com/yoheikikuta/senet-keras/blob/resource/images/plots.png)
+
+- Accuracy for the test data. <br>
+  `92.16%`
