@@ -88,7 +88,7 @@ model.fit_generator(
     , steps_per_epoch=len(x_train) // batch_size
     , epochs=100
     , validation_data = valid_datagen.flow(x_test, y_test)
-    , validation_steps=1
+    , validation_steps=len(x_test) // batch_size
     , callbacks=[change_lr, csv_logger, checkpoint])
 
 model.save_weights('{0}.h5'.format(model_save_name))
