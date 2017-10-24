@@ -10,7 +10,9 @@ from keras.layers import Lambda
 from keras.layers import Reshape
 
 from keras.layers import Conv2D
-from keras.layers import Activation
+#from keras.layers import Activation
+import sys; sys.path.append("../")
+from utils.keras_core import Activation
 from keras.layers import AveragePooling2D
 from keras.layers import GlobalAveragePooling2D
 from keras.layers import BatchNormalization

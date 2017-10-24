@@ -17,9 +17,10 @@ import configparser
 ## Load parameters
 inifile = configparser.ConfigParser()
 inifile.read("./config.ini")
-size = int(inifile.get('cifar10','size'))
-num_classes = int(inifile.get('cifar10','num_classes'))
-batch_size = int(inifile.get('cifar10','batch_size'))
+config_key = 'cifar10-swish'
+size = int(inifile.get(config_key,'size'))
+num_classes = int(inifile.get(config_key,'num_classes'))
+batch_size = int(inifile.get(config_key,'batch_size'))
 
 ## Memory setting
 config = tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True))
