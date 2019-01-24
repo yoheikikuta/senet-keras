@@ -1,5 +1,12 @@
 # SENet (Keras implementation)
 
+---
+**New information**
+- We provide a trained SEResNeXt model (training data: cifar10)  
+  [Google drive](https://drive.google.com/open?id=1JlHMYe-bZdcNJeaBZAUfdanWyMTuOana)  
+  You can try this model in `evaluate-cifar10.ipynb`.
+---
+
 Naive implementation of SENet models in Keras.
 - Transplanting https://github.com/taki0112/SENet-Tensorflow to Keras.
 - Only SE-ResNext at this stage.
