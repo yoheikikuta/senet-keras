@@ -1,5 +1,6 @@
-FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
-MAINTAINER Yohei Kikuta <yohei-kikuta@cookpad.com>
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
+LABEL maintainer="diracdiego@gmail.com"
+LABEL version="2.0"
 
 # Install git, wget, bc and dependencies
 RUN apt-get update && apt-get install -y \
@@ -12,11 +13,7 @@ RUN pip3 install --upgrade pip
 
 # Install python modules.
 COPY ./requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt
-
-# assume ubuntu user id is 1000.
-RUN useradd docker -u 1000 -s /bin/bash -m
-USER docker
+RUN pip3 install -r /requirements.txt
 
 # Set alias for python3.5
 RUN echo "alias python=python3" >> $HOME/.bashrc && \

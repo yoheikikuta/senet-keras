@@ -1,4 +1,4 @@
 #!/bin/sh
-# used from docker image
+# USAGE: bash launch_notebook.sh (in a docker container)
 
-jupyter-notebook --ip=`ip route | awk 'NR==2 {print $9}'`
+jupyter-notebook --allow-root --ip=`ip route | awk 'NR==2 {print $9}'`
