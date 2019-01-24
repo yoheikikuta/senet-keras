@@ -24,7 +24,8 @@ Naive implementation of SENet models in Keras.
   /work
   (in the container) $ python train-cifar10.py
   ```
-  Note that this script is written in an insufficient way; use data generator in consideration of expansion to general image data). The training speed is slow.
+
+Note that this script is written in an insufficient way; use data generator in consideration of expansion to general image data). The training speed is slow. On a p3.2xlarge instance, it takes about 1.5 days.
 
 
 ## Evaluate the model
@@ -35,8 +36,10 @@ Naive implementation of SENet models in Keras.
 - Execute `evaluate-cifar10.ipynb` notebook.
 
 ## Results
-- Plots of training loss and accuracy. <br>
-  ![result](https://github.com/yoheikikuta/senet-keras/blob/resource/images/plots.png)
+- Accuracy plot of train/val. <br>
+  ![result](https://github.com/yoheikikuta/senet-keras/blob/resource/images/plot-accuracy.png)
+- Loss plot of train/val. <br>
+  ![result](https://github.com/yoheikikuta/senet-keras/blob/resource/images/plot-loss.png)
 
 - Accuracy for the test data. <br>
-  `92.16%`
+  `92.38%`
