@@ -25,10 +25,10 @@ from keras import backend as K
 
 class SEResNeXt(object):
     def __init__(self, size=96, num_classes=10, depth=64, reduction_ratio=4, num_split=8, num_block=3):
-        self.depth = depth # number of channels
-        self.ratio = reduction_ratio # ratio of channel reduction in SE module
-        self.num_split = num_split # number of splitting trees for ResNeXt (so called cardinality)
-        self.num_block = num_block # number of residual blocks
+        self.depth = depth  # number of channels
+        self.ratio = reduction_ratio  # ratio of channel reduction in SE module
+        self.num_split = num_split  # number of splitting trees for ResNeXt (so called cardinality)
+        self.num_block = num_block  # number of residual blocks
         if K.image_data_format() == 'channels_first':
             self.channel_axis = 1
         else:
@@ -39,8 +39,8 @@ class SEResNeXt(object):
         '''
         Combination of Conv and BN layers since these always appear together.
         '''
-        x = Conv2D( filters=filters, kernel_size=[kernel_size, kernel_size]
-                               , strides=[stride, stride], padding=padding )(x)
+        x = Conv2D(filters=filters, kernel_size=[kernel_size, kernel_size],
+                   strides=[stride, stride], padding=padding)(x)
         x = BatchNormalization()(x)
         
         return x
@@ -60,9 +60,9 @@ class SEResNeXt(object):
         y = K.zeros_like(x)
         
         if self.channel_axis == 3:
-            y = y[:, :, :, :shape[self.channel_axis]//2]
+            y = y[:, :, :, :shape[self.channel_axis] // 2]
         else:
-            y = y[:, :shape[self.channel_axis]//2, :, :]
+            y = y[:, :shape[self.channel_axis] // 2, :, :]
         
         return concatenate([y, x, y], self.channel_axis)
     
@@ -130,7 +130,7 @@ class SEResNeXt(object):
         for i in range(self.num_block):
             input_dim = int(np.shape(x)[-1])
             
-            if input_dim*2 == out_dim:
+            if input_dim * 2 == out_dim:
                 flag = True
                 stride = 2
             else:
