@@ -133,7 +133,6 @@ class SEResNeXt(object):
             if input_dim*2 == out_dim:
                 flag = True
                 stride = 2
-                channel = input_dim // 2
             else:
                 flag = False
                 stride = 1
